@@ -1,15 +1,21 @@
 <template>
   <div>
-    <Modal />
+    <div>{{ text }}</div>
+    <div>{{ algo }}</div>
   </div>
 </template>
 
 <script>
-import Modal from "./components/Modal.vue";
+import base from "@/minixins/base";
 
 export default {
   name: "App",
-  components: { Modal },
+  mixins: [base],
+  data() {
+    return {
+      text: "Hola Vue",
+    };
+  },
 };
 </script>
 
