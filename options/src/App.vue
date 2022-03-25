@@ -1,10 +1,15 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
-  <component :is="componente"></component>
+  <HelloWorld />
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import { defineAsyncComponent } from "vue";
+
+//Carga primero todo y luego el componente HelloWorld
+const HelloWorld = defineAsyncComponent(() =>
+  import("./components/HelloWorld.vue")
+);
 
 export default {
   name: "App",
