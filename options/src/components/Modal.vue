@@ -1,32 +1,24 @@
 <template>
-  <div>
-    <button @click="toggle">Modal</button>
-    <teleport to="body">
-      <div v-show="show" class="modal">
-        <h1>Título</h1>
-        <p>Lorem ipsum dolor</p>
-        <button @click="toggle">Cerrar</button>
-      </div>
-    </teleport>
-  </div>
+  <div>{{ text }}</div>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      show: false,
+      text: "Hola Vue",
     };
   },
-  methods: {
-    toggle() {
-      this.show = !this.show;
-    },
+  beforeCreate() {
+    console.log("beforeCreate 1", this.$data, this.$el);
+  },
+  created() {
+    console.log("create 2", this.$data, this.$el);
+  },
+  mounted() {
+    console.log("mounted 3", this.$data, this.$el);
   },
 };
 </script>
 
-<style>
-.modal {
-}
-</style>
+<style></style>
