@@ -1,20 +1,14 @@
 <template>
-  <div>
-    <div>{{ text }}</div>
-    <div>{{ algo }}</div>
-  </div>
+  <Home />
 </template>
 
 <script>
-import base from "@/minixins/base";
+import Home from "./components/Home.vue";
 
 export default {
   name: "App",
-  mixins: [base],
-  data() {
-    return {
-      text: "Hola Vue",
-    };
+  components: {
+    Home,
   },
 };
 </script>
@@ -27,17 +21,5 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-}
-
-/*desaparece*/
-.fade-leave-to,
-.fade-enter-from {
-  opacity: 0;
-}
-
-/*aparece*/
-.fade-leave-active,
-.fade-enter-active {
-  transition: opacity 0.5s ease;
 }
 </style>
