@@ -1,15 +1,23 @@
 <template>
-  <div></div>
+  <div>{{ text }} {{ contador }} {{ obj }}</div>
 </template>
 
 <script>
-import { onMounted } from "vue";
+import { ref, reactive } from "vue";
 
 export default {
   setup() {
-    onMounted(() => {
-      console.log("mounted");
-    });
+    const text = ref("Holis");
+    const contador = ref(0);
+    const obj = reactive({ counter: 0 });
+
+    setInterval(() => obj.counter++, 500);
+
+    return {
+      text,
+      contador,
+      obj,
+    };
   },
 };
 </script>
